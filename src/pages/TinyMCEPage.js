@@ -89,9 +89,7 @@ const TinyMCEPage = () => {
     ],
     cons: [
       'Large bundle size',
-      'Resource intensive',
       'Requires API key for cloud version',
-      'Can be complex to configure',
       'Performance impact on large documents',
       'Licensing costs for commercial use'
     ]

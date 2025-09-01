@@ -304,8 +304,7 @@ const EditorJSPage = () => {
       'JSON output format',
       'Extensible plugin system',
       'Clean and modern UI',
-      'API-first design',
-      'Mobile-friendly interface'
+      'API-first design'
     ],
     cons: [
       'Requires plugins for basic formatting',
@@ -613,7 +612,7 @@ const EditorJSPage = () => {
       )}
 
       {/* Implementation Note */}
-      <div className="row mb-4">
+      {/* <div className="row mb-4">
         <div className="col-12">
           <div className="alert alert-success">
             <h6 className="alert-heading">
@@ -637,7 +636,7 @@ const EditorJSPage = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Navigation */}
       <div className="row">
@@ -646,10 +645,16 @@ const EditorJSPage = () => {
             <i className="bi bi-arrow-left me-2"></i>
             Previous: Lexical
           </Link>
-          <Link to="/" className="btn btn-outline-primary">
+          <button
+            className="btn btn-outline-primary"
+            onClick={() => {
+              window.location.href = `${process.env.PUBLIC_URL || ''}/#/`;
+              window.location.reload();
+            }}
+          >
             <i className="bi bi-house me-2"></i>
             Back to Home
-          </Link>
+          </button>
         </div>
       </div>
     </div>

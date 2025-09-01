@@ -56,11 +56,11 @@ const Home = () => {
               React Rich Text Editors Demo
             </h1>
             <p className="lead mb-4">
-              Compare and test 5 popular React Rich Text Editors (RTEs) in one place. 
+              Compare and test popular React Rich Text Editors (RTEs) in one place. 
               Each editor is fully functional - try typing, formatting, and see how they work!
             </p>
             <p className="text-muted">
-              This demo showcases integration, features, pros, cons, and pricing of each RTE 
+              This demo showcases integration, features, pros, cons of each RTE 
               to help you choose the best one for your React application.
             </p>
           </div>
@@ -109,7 +109,7 @@ const Home = () => {
       </div>
 
       {/* Feature Comparison Section */}
-      <div className="row mt-5">
+      {/* <div className="row mt-5">
         <div className="col-12">
           <div className="card">
             <div className="card-header">
@@ -165,7 +165,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Getting Started Section */}
       <div className="row mt-5 mb-4">

@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import TinyMCEPage from './pages/TinyMCEPage';
@@ -22,6 +23,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="" element={<Home />} /> 
             <Route path="/tinymce" element={<TinyMCEPage />} />
             <Route path="/quill" element={<QuillPage />} />
             <Route path="/lexical" element={<LexicalPage />} />

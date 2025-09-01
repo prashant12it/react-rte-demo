@@ -54,12 +54,8 @@ const QuillPage = () => {
       'Good performance'
     ],
     cons: [
-      'Limited advanced features',
-      'Fewer built-in formatting options',
-      'Less customizable than others',
       'Basic toolbar by default',
-      'Limited table support',
-      'No collaborative editing built-in'
+      'Limited table support'
     ]
   };
 
@@ -263,8 +259,8 @@ const QuillPage = () => {
             <i className="bi bi-arrow-left me-2"></i>
             Previous: TinyMCE
           </Link>
-          <Link to="/draftjs" className="btn btn-outline-secondary">
-            Next: Try Draft.js
+          <Link to="/lexical" className="btn btn-outline-secondary">
+            Next: Try Lexical
             <i className="bi bi-arrow-right ms-2"></i>
           </Link>
         </div>

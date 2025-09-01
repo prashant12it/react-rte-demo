@@ -288,8 +288,7 @@ const LexicalPage = () => {
       'TypeScript support',
       'Great accessibility features',
       'Lightweight and performant',
-      'Facebook-backed',
-      'Excellent developer experience'
+      'Facebook-backed'
     ],
     cons: [
       'Limited documentation',
@@ -297,7 +296,7 @@ const LexicalPage = () => {
       'Relatively new ecosystem',
       'Fewer plugins available',
       'Complex setup for advanced features',
-      'Still evolving rapidly'
+      'Still evolving'
     ]
   };
 
@@ -511,7 +510,7 @@ const LexicalPage = () => {
       )}
 
       {/* Implementation Note */}
-      <div className="row mb-4">
+      {/* <div className="row mb-4">
         <div className="col-12">
           <div className="alert alert-success">
             <h6 className="alert-heading">
@@ -535,14 +534,14 @@ const LexicalPage = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Navigation */}
       <div className="row">
         <div className="col-12 text-center">
-          <Link to="/draftjs" className="btn btn-outline-secondary me-2">
+          <Link to="/quill" className="btn btn-outline-secondary me-2">
             <i className="bi bi-arrow-left me-2"></i>
-            Previous: Draft.js
+            Previous: Quill
           </Link>
           <Link to="/editorjs" className="btn btn-outline-secondary">
             Next: Try Editor.js
