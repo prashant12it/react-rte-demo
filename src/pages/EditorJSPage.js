@@ -611,33 +611,6 @@ const EditorJSPage = () => {
         </div>
       )}
 
-      {/* Implementation Note */}
-      {/* <div className="row mb-4">
-        <div className="col-12">
-          <div className="alert alert-success">
-            <h6 className="alert-heading">
-              <i className="bi bi-check-circle me-2"></i>
-              Full Editor.js Implementation
-            </h6>
-            <p className="mb-0">
-              This is a complete Editor.js implementation with:
-              <br />
-              • <strong>Block-based editing:</strong> Headers, Paragraphs, Lists, Quotes
-              <br />
-              • <strong>Custom toolbar:</strong> Quick insert buttons for common blocks
-              <br />
-              • <strong>Keyboard shortcuts:</strong> Cmd+Shift+H (Header), Cmd+Shift+L (List), Cmd+Shift+O (Quote)
-              <br />
-              • <strong>JSON output:</strong> Clean, structured data format
-              <br />
-              • <strong>Drag & drop:</strong> Reorder blocks by dragging
-              <br />
-              <code>Libraries: @editorjs/editorjs, @editorjs/header, @editorjs/paragraph, @editorjs/list, @editorjs/quote</code>
-            </p>
-          </div>
-        </div>
-      </div> */}
-
       {/* Navigation */}
       <div className="row">
         <div className="col-12 text-center">

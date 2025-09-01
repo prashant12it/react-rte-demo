@@ -108,65 +108,6 @@ const Home = () => {
         ))}
       </div>
 
-      {/* Feature Comparison Section */}
-      {/* <div className="row mt-5">
-        <div className="col-12">
-          <div className="card">
-            <div className="card-header">
-              <h3 className="mb-0">
-                <i className="bi bi-table me-2"></i>
-                Quick Comparison
-              </h3>
-            </div>
-            <div className="card-body">
-              <div className="table-responsive">
-                <table className="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Editor</th>
-                      <th>Bundle Size</th>
-                      <th>Learning Curve</th>
-                      <th>Customization</th>
-                      <th>Best For</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>TinyMCE</strong></td>
-                      <td><span className="badge bg-danger">Large</span></td>
-                      <td><span className="badge bg-success">Easy</span></td>
-                      <td><span className="badge bg-success">High</span></td>
-                      <td>Enterprise apps, CMS</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Quill</strong></td>
-                      <td><span className="badge bg-success">Small</span></td>
-                      <td><span className="badge bg-success">Easy</span></td>
-                      <td><span className="badge bg-warning">Medium</span></td>
-                      <td>Simple editors, blogs</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Lexical</strong></td>
-                      <td><span className="badge bg-success">Small</span></td>
-                      <td><span className="badge bg-warning">Medium</span></td>
-                      <td><span className="badge bg-success">High</span></td>
-                      <td>Modern apps, accessibility</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Editor.js</strong></td>
-                      <td><span className="badge bg-success">Small</span></td>
-                      <td><span className="badge bg-warning">Medium</span></td>
-                      <td><span className="badge bg-success">High</span></td>
-                      <td>Block-based content, APIs</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Getting Started Section */}
       <div className="row mt-5 mb-4">
         <div className="col-12">

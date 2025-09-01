@@ -509,33 +509,6 @@ const LexicalPage = () => {
         </div>
       )}
 
-      {/* Implementation Note */}
-      {/* <div className="row mb-4">
-        <div className="col-12">
-          <div className="alert alert-success">
-            <h6 className="alert-heading">
-              <i className="bi bi-check-circle me-2"></i>
-              Full Lexical Implementation
-            </h6>
-            <p className="mb-0">
-              This is a complete Lexical implementation with:
-              <br />
-              • <strong>Text Formatting:</strong> Bold, Italic, Underline
-              <br />
-              • <strong>History:</strong> Undo/Redo functionality
-              <br />
-              • <strong>Lists:</strong> Ordered and Unordered lists
-              <br />
-              • <strong>Indentation:</strong> Increase/Decrease indent
-              <br />
-              • <strong>Links:</strong> Insert and manage hyperlinks
-              <br />
-              <code>Packages used: lexical, @lexical/react, @lexical/rich-text, @lexical/list, @lexical/link</code>
-            </p>
-          </div>
-        </div>
-      </div> */}
-
       {/* Navigation */}
       <div className="row">
         <div className="col-12 text-center">
