@@ -40,13 +40,29 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto">
             {navItems.map((item) => (
               <li className="nav-item" key={item.path}>
-                <Link 
-                  className={`nav-link d-flex align-items-center ${location.pathname === item.path ? 'active' : ''}`}
-                  to={item.path}
-                >
-                  <i className={`bi bi-${item.icon} me-1`}></i>
-                  {item.name}
-                </Link>
+                {item.path === '/' ? (
+                  <button
+                    className={`nav-link d-flex align-items-center btn btn-link px-0${location.pathname === '/' ? ' active' : ''}`}
+                    style={{ textDecoration: 'none' }}
+                    onClick={() => {
+                      window.location.href = `${process.env.PUBLIC_URL || ''}/#/`;
+                      setTimeout(() => {
+                      window.location.reload();
+                      }, 100);
+                    }}
+                  >
+                    <i className={`bi bi-${item.icon} me-1`}></i>
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link 
+                    className={`nav-link d-flex align-items-center${location.pathname === item.path ? ' active' : ''}`}
+                    to={item.path}
+                  >
+                    <i className={`bi bi-${item.icon} me-1`}></i>
+                    {item.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
