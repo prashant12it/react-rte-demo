@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+// Import Quill Font module
+const Font = Quill.import('formats/font');
+
+// Add extensive custom font families
+Font.whitelist = ['arial','comic-sans', 'courier-new', 'georgia', 'helvetica', 'times-new-roman','trebuchet-ms','verdana','tahoma','impact'];
+
+// Register the custom font list
+Quill.register(Font, true);
 
 /**
  * Quill Page Component
@@ -10,6 +18,7 @@ import 'react-quill/dist/quill.snow.css';
 const QuillPage = () => {
   const [content, setContent] = useState('');
   const [submittedContent, setSubmittedContent] = useState('');
+  const quillRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,24 +29,77 @@ const QuillPage = () => {
     setSubmittedContent('');
     setContent('');
   };
-
+// Insert sample content for demonstration
+  const insertSampleContent = () => {
+    const sampleContent = `
+      <h1>Sample Document with Quill</h1>
+      <p><strong>This is bold text</strong>, <em>this is italic</em>, 
+      <u>this is underlined</u>, and <s>this is strikethrough</s>.</p>
+      
+      <h2>Different Header Sizes</h2>
+      <h3>This is H3</h3>
+      <h4>This is H4</h4>
+      
+      <blockquote>
+        This is an example blockquote. It's perfect for highlighting important 
+        information or quotes from other sources.
+      </blockquote>
+      
+      <p>Here's a <a href="https://quilljs.com/" target="_blank">link to Quill documentation</a></p>
+      
+      <h4>Lists and Alignment</h4>
+      <ul>
+        <li>Unordered list item 1</li>
+        <li>Unordered list item 2</li>
+      </ul>
+      
+      <ol>
+        <li>Ordered list item 1</li>
+        <li>Ordered list item 2</li>
+      </ol>
+      
+      <p style="text-align: center;">This text is center aligned</p>
+      <p style="text-align: right;">This text is right aligned</p>
+    `;
+    setContent(sampleContent);
+  };
   // Quill modules configuration
   const modules = {
     toolbar: [
-      [{ 'header': [1, 2, 3, false] }],
+      // Row 1: Headers and basic formatting
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      [{ 'font': Font.whitelist }],
+      [{ 'size': ['small', false, 'large', 'huge'] }],
+      
+      // Row 2: Text formatting
       ['bold', 'italic', 'underline', 'strike'],
       [{ 'color': [] }, { 'background': [] }],
+      
+      // Row 3: Alignment and lists
+      [{ 'align': [] }],
       [{ 'list': 'ordered'}, { 'list': 'bullet' }],
       [{ 'indent': '-1'}, { 'indent': '+1' }],
+      
+      // Row 4: Special formatting and media
+      ['blockquote'],
       ['link', 'image'],
+      
+      // Row 5: Cleanup
       ['clean']
-    ]
+    ],
+    clipboard: {
+      matchVisual: false,
+    }
   };
 
   // Quill formats
   const formats = [
-    'header', 'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent', 'link', 'image', 'color', 'background'
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image', 'video',
+    'align', 'color', 'background',
+    'clean'
   ];
 
   const rteInfo = {
@@ -168,6 +230,33 @@ const QuillPage = () => {
                   <span className="badge bg-info text-dark">{rteInfo.license}</span>
                 </div>
               </div>
+              <hr />
+              
+              <div className="row">
+                <div className="col-12">
+                  <h6><i className="bi bi-gear me-2"></i>Available Toolbar Controls:</h6>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <ul className="list-unstyled">
+                        <li><i className="bi bi-check text-success me-1"></i> Headers (H1-H6)</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Font families (Arial, Times, etc.)</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Font sizes (8px-72px)</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Bold, Italic formatting</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Underline text</li>
+                      </ul>
+                    </div>
+                    <div className="col-md-6">
+                      <ul className="list-unstyled">
+                        <li><i className="bi bi-check text-success me-1"></i> Strikethrough text</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Blockquotes</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Links with target options</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Image upload/insert</li>
+                        <li><i className="bi bi-check text-success me-1"></i> Lists, alignment, colors</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -186,20 +275,17 @@ const QuillPage = () => {
             <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label className="form-label">
-                    Type your content below:
-                  </label>
                   <ReactQuill
+                    ref={quillRef}
                     theme="snow"
                     value={content}
                     onChange={setContent}
                     modules={modules}
                     formats={formats}
-                    placeholder="Start typing your content here..."
-                    style={{ height: '200px' }}
+                    placeholder="Start typing your content here. Try the toolbar controls above!"
                   />
                 </div>
-                <div className="d-flex gap-2 mt-5">
+                <div className="d-flex gap-2 mt-3">
                   <button 
                     type="submit" 
                     className="btn btn-success"

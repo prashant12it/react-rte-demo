@@ -27,7 +27,7 @@ const TinyMCEPage = () => {
               'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
               'insertdatetime', 'media', 'table', 'help', 'wordcount', 'quickbars'
             ],
-            toolbar: 'undo redo | formatselect fontfamily fontsize | ' +
+            toolbar: 'undo redo | blocks formatselect fontfamily fontsize | ' +
             'bold italic underline strikethrough | forecolor backcolor | ' +
             'alignleft aligncenter alignright alignjustify | ' +
             'bullist numlist outdent indent | blockquote | ' +
@@ -85,12 +85,37 @@ const TinyMCEPage = () => {
                 line-height: 1.6;
                 padding: 1rem;
               }
+              h1, h2, h3, h4, h5, h6 {
+                margin-top: 1em;
+                margin-bottom: 0.5em;
+                color: #333;
+              }
+              h1 { font-size: 2em; font-weight: bold; }
+              h2 { font-size: 1.5em; font-weight: bold; }
+              h3 { font-size: 1.17em; font-weight: bold; }
+              h4 { font-size: 1em; font-weight: bold; }
+              h5 { font-size: 0.83em; font-weight: bold; }
+              h6 { font-size: 0.67em; font-weight: bold; }
+              p { margin: 1em 0; }
               blockquote {
                 border-left: 4px solid #ccc;
                 margin-left: 0;
                 padding-left: 1rem;
                 font-style: italic;
                 color: #666;
+              }
+              pre {
+                background-color: #f4f4f4;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 1rem;
+                font-family: 'Courier New', Courier, monospace;
+                overflow-x: auto;
+              }
+              address {
+                font-style: italic;
+                color: #666;
+                margin: 1em 0;
               }
             `,
             setup: (editor) => {
